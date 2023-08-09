@@ -125,7 +125,7 @@
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp b694318e-0f6c-48f3-96dd-abeb212526bb)
     )
-    (fp_text user "${REFERENCE}" (at 0 2.5 unlocked) (layer "F.Fab")
+    (fp_text user "${REFERENCE}" (at -0.031 2.364 unlocked) (layer "F.Fab")
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 50a5ae09-5eb4-425b-a7e4-251ee8a06353)
     )
@@ -563,7 +563,7 @@
 
   (footprint "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" (layer "F.Cu")
     (tstamp 2bc9faaa-4be8-4ed2-80ce-1515967ac18e)
-    (at 106.5 63.55)
+    (at 104.14 58.42)
     (descr "Through hole straight pin header, 1x01, 2.54mm pitch, single row")
     (tags "Through hole pin header THT 1x01 2.54mm single row")
     (property "Sheetfile" "ADS868_Test.kicad_sch")
@@ -679,7 +679,7 @@
 
   (footprint "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" (layer "F.Cu")
     (tstamp 46022abf-a2fe-4fe0-9291-a3e0db718593)
-    (at 106.5 77.5)
+    (at 104.14 88.9)
     (descr "Through hole straight pin header, 1x01, 2.54mm pitch, single row")
     (tags "Through hole pin header THT 1x01 2.54mm single row")
     (property "Sheetfile" "ADS868_Test.kicad_sch")
@@ -1219,7 +1219,7 @@
 
   (footprint "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" (layer "F.Cu")
     (tstamp 6c124664-9a69-4938-97b3-2cee6a4a93c3)
-    (at 106.5 72.85)
+    (at 104.14 78.74)
     (descr "Through hole straight pin header, 1x01, 2.54mm pitch, single row")
     (tags "Through hole pin header THT 1x01 2.54mm single row")
     (property "Sheetfile" "ADS868_Test.kicad_sch")
@@ -1421,7 +1421,7 @@
 
   (footprint "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" (layer "F.Cu")
     (tstamp 796b0a4b-d587-48ff-ae3f-611761cb3d33)
-    (at 106.5 68.2)
+    (at 104.14 68.58)
     (descr "Through hole straight pin header, 1x01, 2.54mm pitch, single row")
     (tags "Through hole pin header THT 1x01 2.54mm single row")
     (property "Sheetfile" "ADS868_Test.kicad_sch")
