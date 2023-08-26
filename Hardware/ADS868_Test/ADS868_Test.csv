@@ -1,0 +1,14 @@
+"Id";"Designator";"Footprint";"Quantity";"Designation";"Supplier and ref";
+1;"L101";"NRH3012";1;"NRH3012T100MN";;;
+2;"C105,C109,C107";"C_0603_1608Metric_Pad1.08x0.95mm_HandSolder";3;"1u";;;
+3;"J105,J106";"PinHeader_2x06_P2.54mm_Horizontal";2;"71764-0012";;;
+4;"C110";"C_0805_2012Metric_Pad1.18x1.45mm_HandSolder";1;"GRM21BR60J226ME39L";;;
+5;"C102,C101";"C_0603_1608Metric_Pad1.08x0.95mm_HandSolder";2;"330p";;;
+6;"J101,J104,J103,J102";"PinHeader_1x01_P2.54mm_Vertical";4;"Conn_01x01";;;
+7;"R104,R105,R103,R106";"R_0603_1608Metric_Pad0.98x0.95mm_HandSolder";4;"10k";;;
+8;"C104,C103";"C_0603_1608Metric_Pad1.08x0.95mm_HandSolder";2;"4u7";;;
+9;"C106,C108";"C_0805_2012Metric_Pad1.18x1.45mm_HandSolder";2;"22u";;;
+10;"U101,U102";"TSSOP-16_4.4x5mm_P0.65mm";2;"ADS8681IPWR";;;
+11;"U103";"SOT-363_SC-70-6";1;"LTC3525-5";;;
+12;"R107";"R_0603_1608Metric_Pad0.98x0.95mm_HandSolder";1;"0";;;
+13;"R102,R101";"R_0603_1608Metric_Pad0.98x0.95mm_HandSolder";2;"0R22";;;
