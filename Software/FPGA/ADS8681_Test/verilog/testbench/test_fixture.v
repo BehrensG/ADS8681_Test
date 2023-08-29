@@ -59,7 +59,7 @@ module test_fixture;
 
 
 		// Wait 100 ns for global reset to finish
-		#125 din = 1;
+		#45 din = 1;
 		 din = 0;
 		
         
@@ -75,15 +75,15 @@ module test_fixture;
 	always @(posedge pssi_clk_o) begin
 	if(!din)begin
 	case(state)
-	  0: datain[7:0] = 8'h11;
-	  1: datain[7:0] = 8'h22;
-	  2: datain[7:0] = 8'h33;
-	  3: datain[7:0] = 8'h44;
+	  0: datain[7:0] = 8'h1A;
+	  1: datain[7:0] = 8'h2B;
+	  2: datain[7:0] = 8'h3C;
+	  3: datain[7:0] = 8'h4D;
 	  endcase
 	  state = state + 1;
 	  if(state == 4) begin
 	  
-		#25 din = 1;
+		#20 din = 1;
 	   end
 		end
 	end

@@ -1,0 +1,24 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o /home/grzegorz/git/ADS8681_Test/Software/FPGA/ADS8681_Test/test_fixture_isim_beh.exe -prj /home/grzegorz/git/ADS8681_Test/Software/FPGA/ADS8681_Test/test_fixture_beh.prj work.test_fixture work.glbl 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Analyzing Verilog file "/home/grzegorz/git/ADS8681_Test/Software/FPGA/ADS8681_Test/verilog/src/clock_div4.v" into library work
+Analyzing Verilog file "/home/grzegorz/git/ADS8681_Test/Software/FPGA/ADS8681_Test/verilog/src/stm32h7_pssi_8bus_32bits.v" into library work
+Analyzing Verilog file "/home/grzegorz/git/ADS8681_Test/Software/FPGA/ADS8681_Test/verilog/testbench/test_fixture.v" into library work
+Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 83436 KB
+Fuse CPU Usage: 1080 ms
+Compiling module clk_div4
+Compiling module stm32h7_pssi_8bus_32bits
+Compiling module test_fixture
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 4 Verilog Units
+Built simulation executable /home/grzegorz/git/ADS8681_Test/Software/FPGA/ADS8681_Test/test_fixture_isim_beh.exe
+Fuse Memory Usage: 1167920 KB
+Fuse CPU Usage: 1090 ms
+GCC CPU Usage: 480 ms

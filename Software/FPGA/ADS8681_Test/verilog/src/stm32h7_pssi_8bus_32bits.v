@@ -31,30 +31,33 @@ module stm32h7_pssi_8bus_32bits(
   reg [7:0] data_reg;
   
   clk_div4 div_pss_clk(
-    .clk_in(clk_i),
-	 .clk_out(pssi_clk_o)
+      .clk_in(clk_i),
+	   .clk_out(pssi_clk_o)
 	 );
   
   
-  always @(posedge clk_i) begin
+  always @(posedge pssi_clk_o) begin
+    if (pssi_de_io) data_state_reg <= 0;
 	 if (!pssi_de_io) begin
-	   data_reg <= pssi_data_io;
-	   data_state_reg <= data_state_reg + 1'b1;
-		if(data_state_reg == 4'd4) begin
-		  data_state_reg <= 4'd0;
-	   end
+	   case (data_state_reg)
+		  0: begin
+		       fpga_data_o[31:24] <= pssi_data_io[7:0];
+			    data_state_reg <= 1;
+			  end
+		  1: begin
+		       fpga_data_o[23:16] <= pssi_data_io[7:0];
+			    data_state_reg <= 2;
+			  end
+		  2: begin
+		       fpga_data_o[15:8] <= pssi_data_io[7:0];
+			    data_state_reg <= 3;
+			  end
+		  3: begin
+		       fpga_data_o[7:0] <= pssi_data_io[7:0];
+			    data_state_reg <= 4;
+			  end
+	   endcase
 	 end
   end
-  
-   
-  always @(posedge clk_i) begin
-   case (data_state_reg)
-	  0: fpga_data_o[31:24] <= data_reg[7:0];
-	  1: fpga_data_o[23:16] <= data_reg[7:0];
-	  2: fpga_data_o[15:8] <= data_reg[7:0];
-	  3: fpga_data_o[7:0] <= data_reg[7:0];
-	endcase
-  end
-  
 
 endmodule

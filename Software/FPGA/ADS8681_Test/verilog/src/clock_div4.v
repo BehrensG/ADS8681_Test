@@ -23,7 +23,7 @@ module clk_div4 (clk_in, clk_out);
 input clk_in; // input clock on FPGA
 output reg clk_out; // output clock after dividing the input clock by divisor
 reg[27:0] counter=28'd0;
-parameter DIVISOR = 28'd4;
+parameter DIVISOR = 28'd2;
 
 always @(posedge clk_in)
 begin
