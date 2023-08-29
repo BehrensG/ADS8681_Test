@@ -258,7 +258,7 @@ static void MX_PSSI_Init(void)
   hpssi.Instance = PSSI;
   hpssi.Init.DataWidth = HAL_PSSI_32BITS;
   hpssi.Init.BusWidth = HAL_PSSI_8LINES;
-  hpssi.Init.ControlSignal = HAL_PSSI_DE_RDY_ALT_ENABLE;
+  hpssi.Init.ControlSignal = HAL_PSSI_MAP_DE_BIDIR_ENABLE;
   hpssi.Init.ClockPolarity = HAL_PSSI_RISING_EDGE;
   hpssi.Init.DataEnablePolarity = HAL_PSSI_DEPOL_ACTIVE_LOW;
   hpssi.Init.ReadyPolarity = HAL_PSSI_RDYPOL_ACTIVE_LOW;
