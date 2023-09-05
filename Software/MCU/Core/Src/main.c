@@ -44,7 +44,6 @@
 /* Private variables ---------------------------------------------------------*/
 
 PSSI_HandleTypeDef hpssi;
-DMA_HandleTypeDef hdma_pssi;
 
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
@@ -63,10 +62,8 @@ uint32_t PSSI_HAL_PSSI_ErrorCallback_count = 0;
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
-static void MPU_Initialize(void);
 static void MPU_Config(void);
 static void MX_GPIO_Init(void);
-static void MX_DMA_Init(void);
 static void MX_PSSI_Init(void);
 void StartDefaultTask(void *argument);
 
@@ -76,7 +73,7 @@ void StartDefaultTask(void *argument);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+/*
 void HAL_PSSI_RxCpltCallback(PSSI_HandleTypeDef *hpssi)
 {
   PSSI_HAL_PSSI_ReceiveComplete_count++;
@@ -91,6 +88,7 @@ void HAL_PSSI_ErrorCallback(PSSI_HandleTypeDef *hpssi)
 {
   PSSI_HAL_PSSI_ErrorCallback_count++;
 }
+*/
 /* USER CODE END 0 */
 
 /**
@@ -103,6 +101,9 @@ int main(void)
 
   /* USER CODE END 1 */
 
+  /* MPU Configuration--------------------------------------------------------*/
+  MPU_Config();
+
   /* Enable I-Cache---------------------------------------------------------*/
   SCB_EnableICache();
 
@@ -113,9 +114,6 @@ int main(void)
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
-
-  /* MPU Configuration--------------------------------------------------------*/
-  MPU_Config();
 
   /* USER CODE BEGIN Init */
 
@@ -130,7 +128,6 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_DMA_Init();
   MX_PSSI_Init();
   /* USER CODE BEGIN 2 */
 
@@ -169,7 +166,6 @@ int main(void)
 
   /* Start scheduler */
   osKernelStart();
-
   /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
@@ -256,9 +252,9 @@ static void MX_PSSI_Init(void)
 
   /* USER CODE END PSSI_Init 1 */
   hpssi.Instance = PSSI;
-  hpssi.Init.DataWidth = HAL_PSSI_32BITS;
+  hpssi.Init.DataWidth = HAL_PSSI_8BITS;
   hpssi.Init.BusWidth = HAL_PSSI_8LINES;
-  hpssi.Init.ControlSignal = HAL_PSSI_MAP_DE_BIDIR_ENABLE;
+  hpssi.Init.ControlSignal = HAL_PSSI_DE_ENABLE;
   hpssi.Init.ClockPolarity = HAL_PSSI_RISING_EDGE;
   hpssi.Init.DataEnablePolarity = HAL_PSSI_DEPOL_ACTIVE_LOW;
   hpssi.Init.ReadyPolarity = HAL_PSSI_RDYPOL_ACTIVE_LOW;
@@ -269,22 +265,6 @@ static void MX_PSSI_Init(void)
   /* USER CODE BEGIN PSSI_Init 2 */
 
   /* USER CODE END PSSI_Init 2 */
-
-}
-
-/**
-  * Enable DMA controller clock
-  */
-static void MX_DMA_Init(void)
-{
-
-  /* DMA controller clock enable */
-  __HAL_RCC_DMA1_CLK_ENABLE();
-
-  /* DMA interrupt init */
-  /* DMA1_Stream0_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(DMA1_Stream0_IRQn, 5, 0);
-  HAL_NVIC_EnableIRQ(DMA1_Stream0_IRQn);
 
 }
 
@@ -317,11 +297,11 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin : B1_Pin */
-  GPIO_InitStruct.Pin = B1_Pin;
+  /*Configure GPIO pin : B1_Blue_Pin */
+  GPIO_InitStruct.Pin = B1_Blue_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(B1_Blue_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : LED_GREEN_Pin LED_RED_Pin */
   GPIO_InitStruct.Pin = LED_GREEN_Pin|LED_RED_Pin;

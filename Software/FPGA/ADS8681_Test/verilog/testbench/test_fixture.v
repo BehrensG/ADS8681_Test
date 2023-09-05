@@ -35,9 +35,9 @@ module test_fixture;
 	wire pssi_de_io;
 	wire [7:0] pssi_data_io ;
 	
-	reg wr;
-	reg din;
-	reg [7:0] datain;
+	reg wr = 1;
+	reg din = 1;
+	reg [7:0] datain = 8'd0;
 	integer state = 0;
 
 	// Instantiate the Unit Under Test (UUT)
@@ -55,39 +55,34 @@ module test_fixture;
 	initial begin
 		// Initialize Inputs
 		clk_i = 1;
-		#10 wr = 1;
+		 wr = 1;
 
 
 		// Wait 100 ns for global reset to finish
-		#45 din = 1;
-		 din = 0;
-		
-        
+		#10 din = 1;
+		#10 din = 0;
+		#80 din = 1;
+		#10 din = 0;
 		// Add stimulus here
 
 	end
 	
 	always begin
 	#5 clk_i  <= ~clk_i;
-
 	end
 	
 	always @(posedge pssi_clk_o) begin
 	if(!din)begin
 	case(state)
-	  0: datain[7:0] = 8'h1A;
-	  1: datain[7:0] = 8'h2B;
-	  2: datain[7:0] = 8'h3C;
-	  3: datain[7:0] = 8'h4D;
+	  0: datain[7:0] <= 8'h1A;
+	  1: datain[7:0] <= 8'h2B;
+	  2: datain[7:0] <= 8'h3C;
+	  3: datain[7:0] <= 8'h4D;
 	  endcase
-	  state = state + 1;
-	  if(state == 4) begin
-	  
-		#20 din = 1;
-	   end
-		end
+	  state <= state + 1;
+
 	end
-	
+	end
 
 		
 endmodule

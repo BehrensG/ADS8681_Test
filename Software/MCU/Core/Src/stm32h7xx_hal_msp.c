@@ -20,11 +20,9 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
-extern DMA_HandleTypeDef hdma_pssi;
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN TD */
@@ -117,26 +115,25 @@ void HAL_PSSI_MspInit(PSSI_HandleTypeDef* hpssi)
     GPIO_InitStruct.Pin = GPIO_PIN_5|GPIO_PIN_6;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
     GPIO_InitStruct.Alternate = GPIO_AF13_PSSI;
     HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
-    GPIO_InitStruct.Pin = GPIO_PIN_4;
+    GPIO_InitStruct.Pin = GPIO_PIN_4|GPIO_PIN_6;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-    GPIO_InitStruct.Pull = GPIO_PULLUP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
     GPIO_InitStruct.Alternate = GPIO_AF13_PSSI;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-    GPIO_InitStruct.Pin = GPIO_PIN_6;
+    GPIO_InitStruct.Pin = GPIO_PIN_6|GPIO_PIN_7|GPIO_PIN_8|GPIO_PIN_9;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
     GPIO_InitStruct.Alternate = GPIO_AF13_PSSI;
-    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+    HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
-    GPIO_InitStruct.Pin = GPIO_PIN_6|GPIO_PIN_7|GPIO_PIN_8|GPIO_PIN_9
-                          |GPIO_PIN_11;
+    GPIO_InitStruct.Pin = GPIO_PIN_11;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
@@ -146,41 +143,16 @@ void HAL_PSSI_MspInit(PSSI_HandleTypeDef* hpssi)
     GPIO_InitStruct.Pin = GPIO_PIN_3;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
     GPIO_InitStruct.Alternate = GPIO_AF13_PSSI;
     HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
     GPIO_InitStruct.Pin = GPIO_PIN_9;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
     GPIO_InitStruct.Alternate = GPIO_AF13_PSSI;
     HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
-
-    /* PSSI DMA Init */
-    /* PSSI Init */
-    hdma_pssi.Instance = DMA1_Stream0;
-    hdma_pssi.Init.Request = DMA_REQUEST_DCMI_PSSI;
-    hdma_pssi.Init.Direction = DMA_PERIPH_TO_MEMORY;
-    hdma_pssi.Init.PeriphInc = DMA_PINC_DISABLE;
-    hdma_pssi.Init.MemInc = DMA_MINC_ENABLE;
-    hdma_pssi.Init.PeriphDataAlignment = DMA_PDATAALIGN_WORD;
-    hdma_pssi.Init.MemDataAlignment = DMA_MDATAALIGN_WORD;
-    hdma_pssi.Init.Mode = DMA_NORMAL;
-    hdma_pssi.Init.Priority = DMA_PRIORITY_HIGH;
-    hdma_pssi.Init.FIFOMode = DMA_FIFOMODE_ENABLE;
-    hdma_pssi.Init.FIFOThreshold = DMA_FIFO_THRESHOLD_FULL;
-    hdma_pssi.Init.MemBurst = DMA_MBURST_SINGLE;
-    hdma_pssi.Init.PeriphBurst = DMA_PBURST_SINGLE;
-    if (HAL_DMA_Init(&hdma_pssi) != HAL_OK)
-    {
-      Error_Handler();
-    }
-
-    /* Several peripheral DMA handle pointers point to the same DMA handle.
-     Be aware that there is only one channel to perform all the requested DMAs. */
-    __HAL_LINKDMA(hpssi,hdmarx,hdma_pssi);
-    __HAL_LINKDMA(hpssi,hdmatx,hdma_pssi);
 
   /* USER CODE BEGIN PSSI_MspInit 1 */
 
@@ -229,9 +201,6 @@ void HAL_PSSI_MspDeInit(PSSI_HandleTypeDef* hpssi)
 
     HAL_GPIO_DeInit(GPIOG, GPIO_PIN_9);
 
-    /* PSSI DMA DeInit */
-    HAL_DMA_DeInit(hpssi->hdmarx);
-    HAL_DMA_DeInit(hpssi->hdmatx);
   /* USER CODE BEGIN PSSI_MspDeInit 1 */
 
   /* USER CODE END PSSI_MspDeInit 1 */

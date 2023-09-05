@@ -41,6 +41,7 @@
 #include "scpi/scpi.h"
 #include "stm32h7xx_hal.h"
 #include "scpi_def.h"
+#include "main.h"
 
 extern struct bsp_t bsp;
 
@@ -207,22 +208,25 @@ extern uint32_t PSSI_HAL_PSSI_ReceiveComplete_count ;
 extern uint32_t PSSI_HAL_PSSI_ErrorCallback_count;
 extern PSSI_HandleTypeDef hpssi;
 
+
+char pData8_S_TRSMT[4] ={10,11,12,13};
+
 scpi_result_t SCPI_TS(scpi_t * context)
 {
-  uint32_t tx_data = 0x00000001;
-  PSSI_HAL_PSSI_TransmitComplete_count = 0;
+  uint32_t tx_data = 0;
 
-  if(HAL_PSSI_Transmit_DMA(&hpssi, (uint32_t*)tx_data, sizeof(1)!= HAL_OK))
+  if(!SCPI_ParamUInt32(context, &tx_data, TRUE))
   {
-	  Error_Handler();
+	  return SCPI_RES_ERR;
   }
 
-  HAL_Delay(2);
+  pData8_S_TRSMT[3] = (char)tx_data;
 
-  while(PSSI_HAL_PSSI_TransmitComplete_count != 1)
-  {
-	  /* wait until transmit data is complete */
-  }
+  HAL_PSSI_Transmit(&hpssi, pData8_S_TRSMT, sizeof(pData8_S_TRSMT), 1000);
+ // HAL_GPIO_TogglePin(TEST_GPIO_Port, TEST_Pin);
+
+  //HAL_Delay(20);
+ // HAL_GPIO_TogglePin(TEST_GPIO_Port, TEST_Pin);
 
     return SCPI_RES_OK;
 }
