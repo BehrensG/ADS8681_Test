@@ -1,0 +1,34 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Thu Jan  2 12:37:19 2025
+# Process ID: 11879
+# Current directory: /home/grzegorz/git/Workbench/FPGA/vivado/ADS8681/ADS8681.runs/ads8681_block_1_dlmb_v10_0_synth_1
+# Command line: vivado -log ads8681_block_1_dlmb_v10_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ads8681_block_1_dlmb_v10_0.tcl
+# Log file: /home/grzegorz/git/Workbench/FPGA/vivado/ADS8681/ADS8681.runs/ads8681_block_1_dlmb_v10_0_synth_1/ads8681_block_1_dlmb_v10_0.vds
+# Journal file: /home/grzegorz/git/Workbench/FPGA/vivado/ADS8681/ADS8681.runs/ads8681_block_1_dlmb_v10_0_synth_1/vivado.jou
+# Running On        :archlinux
+# Platform          :unknown
+# Operating System  :unknown
+# Processor Detail  :Intel(R) Core(TM) i7-3630QM CPU @ 2.40GHz
+# CPU Frequency     :3192.738 MHz
+# CPU Physical cores:4
+# CPU Logical cores :8
+# Host memory       :16370 MB
+# Swap memory       :34359 MB
+# Total Virtual     :50730 MB
+# Available Virtual :37175 MB
+#-----------------------------------------------------------
+source ads8681_block_1_dlmb_v10_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1439.043 ; gain = 97.836 ; free physical = 8515 ; free virtual = 39256
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: ads8681_block_1_dlmb_v10_0
+INFO: [IP_Flow 19-6922] IPCACHE: Exporting cached entry b08a9c9b1e81bd87 to dir: /home/grzegorz/git/Workbench/FPGA/vivado/ADS8681/ADS8681.runs/ads8681_block_1_dlmb_v10_0_synth_1
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/grzegorz/git/Workbench/FPGA/vivado/ADS8681/ADS8681.cache/ip/2024.1/b/0/b08a9c9b1e81bd87/ads8681_block_1_ilmb_v10_0_sim_netlist.vhdl to /home/grzegorz/git/Workbench/FPGA/vivado/ADS8681/ADS8681.runs/ads8681_block_1_dlmb_v10_0_synth_1/ads8681_block_1_dlmb_v10_0_sim_netlist.vhdl.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/grzegorz/git/Workbench/FPGA/vivado/ADS8681/ADS8681.cache/ip/2024.1/b/0/b08a9c9b1e81bd87/ads8681_block_1_ilmb_v10_0_sim_netlist.v to /home/grzegorz/git/Workbench/FPGA/vivado/ADS8681/ADS8681.runs/ads8681_block_1_dlmb_v10_0_synth_1/ads8681_block_1_dlmb_v10_0_sim_netlist.v.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/grzegorz/git/Workbench/FPGA/vivado/ADS8681/ADS8681.cache/ip/2024.1/b/0/b08a9c9b1e81bd87/ads8681_block_1_ilmb_v10_0.dcp to /home/grzegorz/git/Workbench/FPGA/vivado/ADS8681/ADS8681.runs/ads8681_block_1_dlmb_v10_0_synth_1/ads8681_block_1_dlmb_v10_0.dcp.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/grzegorz/git/Workbench/FPGA/vivado/ADS8681/ADS8681.cache/ip/2024.1/b/0/b08a9c9b1e81bd87/ads8681_block_1_ilmb_v10_0_stub.v to /home/grzegorz/git/Workbench/FPGA/vivado/ADS8681/ADS8681.runs/ads8681_block_1_dlmb_v10_0_synth_1/ads8681_block_1_dlmb_v10_0_stub.v.
+INFO: [IP_Flow 19-6928] IPCACHE: copied cached file /home/grzegorz/git/Workbench/FPGA/vivado/ADS8681/ADS8681.cache/ip/2024.1/b/0/b08a9c9b1e81bd87/ads8681_block_1_ilmb_v10_0_stub.vhdl to /home/grzegorz/git/Workbench/FPGA/vivado/ADS8681/ADS8681.runs/ads8681_block_1_dlmb_v10_0_synth_1/ads8681_block_1_dlmb_v10_0_stub.vhdl.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP ads8681_block_1_dlmb_v10_0, cache-ID = b08a9c9b1e81bd87.
+INFO: [Common 17-206] Exiting Vivado at Thu Jan  2 12:37:46 2025...

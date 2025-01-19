@@ -1,0 +1,32 @@
+
+22:42:21 Build Finished (took 6s.575ms)
+
+22:42:21 **** Clean-only build of project ads8681_platform ****
+buildplatform.sh 37021 ads8681_platform clean 
+XSDB Server Channel: tcfchan#7
+Cleaning the BSP for domain  - standalone_domain
+make -C microblaze_0/libsrc/bram_v4_10/src -s clean 
+
+make -C microblaze_0/libsrc/cpu_v2_18/src -s clean 
+
+make -C microblaze_0/libsrc/gpio_v4_11/src -s clean 
+
+make -C microblaze_0/libsrc/intc_v3_18/src -s clean 
+
+make -C microblaze_0/libsrc/spi_v4_12/src -s clean 
+
+make -C microblaze_0/libsrc/standalone_v9_1/src -s clean 
+
+make -C microblaze_0/libsrc/uartlite_v3_10/src -s clean 
+
+rm -f microblaze_0/lib/libxil.a
+
+22:42:27 **** Clean-only build of configuration Debug for project ads8681 ****
+make clean 
+rm -rf ./src/SCPI/libscpi/src/error.o ./src/SCPI/libscpi/src/expression.o ./src/SCPI/libscpi/src/fifo.o ./src/SCPI/libscpi/src/ieee488.o ./src/SCPI/libscpi/src/lexer.o ./src/SCPI/libscpi/src/minimal.o ./src/SCPI/libscpi/src/parser.o ./src/SCPI/libscpi/src/units.o ./src/SCPI/libscpi/src/utils.o  ./src/SCPI/min_printf.o  ./src/ADS8681.o ./src/SCPI_Def.o ./src/main.o ./src/platform.o ./src/SCPI/libscpi/src/error.d ./src/SCPI/libscpi/src/expression.d ./src/SCPI/libscpi/src/fifo.d ./src/SCPI/libscpi/src/ieee488.d ./src/SCPI/libscpi/src/lexer.d ./src/SCPI/libscpi/src/minimal.d ./src/SCPI/libscpi/src/parser.d ./src/SCPI/libscpi/src/units.d ./src/SCPI/libscpi/src/utils.d  ./src/SCPI/min_printf.d  ./src/ADS8681.d ./src/SCPI_Def.d ./src/main.d ./src/platform.d ads8681.elf.size  ads8681.elf
+ 
+22:42:27 **** Clean-only build of configuration Debug for project ads8681_system ****
+make clean 
+rm -rf ./_sds
+rm -rf package
+rm -f system.bif

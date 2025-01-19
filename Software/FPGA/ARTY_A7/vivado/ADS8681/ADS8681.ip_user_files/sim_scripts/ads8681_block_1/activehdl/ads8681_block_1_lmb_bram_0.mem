@@ -1,0 +1,16 @@
+// Mem file initialization records.
+//
+// SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+// Vivado v2024.1 (64-bit)
+// Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+// Created on Monday January 06, 2025 - 08:26:15 pm, from:
+//
+//     Map file     - /home/grzegorz/git/Workbench/FPGA/vivado/ADS8681/ADS8681.gen/sources_1/bd/ads8681_block_1/ads8681_block_1.bmm
+//     Data file(s) - /home/grzegorz/git/Workbench/FPGA/vivado/ADS8681/ADS8681.gen/sources_1/bd/ads8681_block_1/ip/ads8681_block_1_microblaze_0_0/data/mb_bootloop_le.elf
+//
+// Address space 'ads8681_block_1_i_microblaze_0.ads8681_block_1_i_microblaze_0_local_memory_lmb_bram_128K_3_ADDR_SPACE', bit lane [31:0].
+//
+// Bus width = 32 bits, number of bus blocks = 1.
+
+@00000000
+    B8000000

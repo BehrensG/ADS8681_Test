@@ -1,0 +1,6 @@
+21:33:19 **** Incremental Build of configuration Debug for project uart_test3_app_system ****
+make all 
+Skipping SD card image generation. Reason: The system project only has applications for microblaze processors.
+
+21:33:19 Build Finished (took 228ms)
+

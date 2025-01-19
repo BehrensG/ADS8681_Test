@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.tcf.internal.cdt.ui.hover.ExpressionInformationControlCreator$ExpressionInformationControl">
+		<item key="WIDTH" value="506"/>
+		<item key="HEIGHT" value="223"/>
+		<item key="SashWeightTree" value="649"/>
+		<item key="SashWeightDetails" value="350"/>
+	</section>
+</section>

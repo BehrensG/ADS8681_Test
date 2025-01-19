@@ -1,0 +1,26 @@
+21:32:28 **** Incremental Build of configuration Debug for project ads8681 ****
+make all 
+Building file: ../src/ADS8681.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -I/home/grzegorz/git/Workbench/FPGA/vitis/ads8681_platform/export/ads8681_platform/sw/ads8681_platform/standalone_domain/bspinclude/include -I"/home/grzegorz/git/Workbench/FPGA/vitis/ads8681/src/SCPI/libscpi" -I"/home/grzegorz/git/Workbench/FPGA/vitis/ads8681/src/SCPI/libscpi/src" -I"/home/grzegorz/git/Workbench/FPGA/vitis/ads8681/src/SCPI" -I"/home/grzegorz/git/Workbench/FPGA/vitis/ads8681/src/SCPI/libscpi/inc" -c -fmessage-length=0 -MT"src/ADS8681.o" -I/home/grzegorz/git/Workbench/FPGA/vitis/ads8681_platform/export/ads8681_platform/sw/ads8681_platform/standalone_domain/bspinclude/include -mlittle-endian -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/ADS8681.d" -MT"src/ADS8681.o" -o "src/ADS8681.o" "../src/ADS8681.c"
+../src/ADS8681.c: In function 'SPI_Init':
+../src/ADS8681.c:82:17: warning: implicit declaration of function 'usleep'; did you mean 'mb_sleep'? [-Wimplicit-function-declaration]
+   82 |                 usleep(2);
+      |                 ^~~~~~
+      |                 mb_sleep
+Finished building: ../src/ADS8681.c
+ 
+Building target: ads8681.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L/home/grzegorz/git/Workbench/FPGA/vitis/ads8681_platform/export/ads8681_platform/sw/ads8681_platform/standalone_domain/bsplib/lib -mlittle-endian -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "ads8681.elf" ./src/SCPI/libscpi/src/error.o ./src/SCPI/libscpi/src/expression.o ./src/SCPI/libscpi/src/fifo.o ./src/SCPI/libscpi/src/ieee488.o ./src/SCPI/libscpi/src/lexer.o ./src/SCPI/libscpi/src/minimal.o ./src/SCPI/libscpi/src/parser.o ./src/SCPI/libscpi/src/units.o ./src/SCPI/libscpi/src/utils.o  ./src/SCPI/min_printf.o  ./src/ADS8681.o ./src/SCPI_Def.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: ads8681.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size ads8681.elf  |tee "ads8681.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  79148	    424	   4052	  83624	  146a8	ads8681.elf
+Finished building: ads8681.elf.size
+ 
+
+21:32:29 Build Finished (took 434ms)
+

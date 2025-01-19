@@ -1,0 +1,32 @@
+21:33:18 **** Incremental Build of configuration Debug for project uart_test3_app ****
+make all 
+Building file: ../src/helloworld.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I/home/grzegorz/git/Workbench/FPGA/vitis/uart_test3/export/uart_test3/sw/uart_test3/standalone_domain/bspinclude/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+In file included from ../src/helloworld.c:23:
+/home/grzegorz/git/Workbench/FPGA/vitis/uart_test3/export/uart_test3/sw/uart_test3/standalone_domain/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+  102 | #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+      |  ^~~~~~~
+/home/grzegorz/git/Workbench/FPGA/vitis/uart_test3/export/uart_test3/sw/uart_test3/standalone_domain/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+  103 | #warning  Please refer the Standalone BSP UG647 for further details
+      |  ^~~~~~~
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:40:9: warning: implicit declaration of function 'sleep' [-Wimplicit-function-declaration]
+   40 |         sleep(1);
+      |         ^~~~~
+Finished building: ../src/helloworld.c
+ 
+Building target: uart_test3_app.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L/home/grzegorz/git/Workbench/FPGA/vitis/uart_test3/export/uart_test3/sw/uart_test3/standalone_domain/bsplib/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "uart_test3_app.elf" ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: uart_test3_app.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size uart_test3_app.elf  |tee "uart_test3_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  11872	    328	   3104	  15304	   3bc8	uart_test3_app.elf
+Finished building: uart_test3_app.elf.size
+ 
+
+21:33:18 Build Finished (took 380ms)
+

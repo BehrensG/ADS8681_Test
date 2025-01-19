@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="ads8681" location="/home/grzegorz/git/Workbench/FPGA/vitis/ads8681" platform="/home/grzegorz/git/ADS8681_Test/Software/FPGA/ARTY_A7/vitis/ads8681_platform/export/ads8681_platform/ads8681_platform.xpfm" platformUID="xilinx:::0.0(custom)" systemProject="ads8681_system" sysConfig="ads8681_platform" runtime="C/C++" cpu="standalone_domain" cpuInstance="microblaze_0" os="standalone" mssSignature="cfacefacffbf10cb68f31c5aacb23854">
+  <configuration name="Debug" id="xilinx.gnu.mb.exe.debug.1845586275">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.mb.exe.release.1810953722" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="hello_world"/>
+</sdkproject:SdkProject>

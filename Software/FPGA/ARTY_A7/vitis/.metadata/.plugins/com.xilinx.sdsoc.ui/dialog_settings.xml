@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="sdx.custom.platform.repository.locations" value="/home/grzegorz/git/Workbench/FPGA/vitis/uart_test2/export/uart_test2;/home/grzegorz/git/Workbench/FPGA/vitis/uart_test3/export/uart_test3;/home/grzegorz/git/Workbench/FPGA/vitis/ads8681_platform/export/ads8681_platform;/home/grzegorz/git/ADS8681_Test/Software/FPGA/ARTY_A7/vitis/ads8681_platform"/>
+	<item key="sdx.custom.platform.repository.last.directory.dialog.location" value="/home/grzegorz/git/ADS8681_Test/Software/FPGA/ARTY_A7/vitis/ads8681_platform/export/ads8681_platform"/>
+</section>

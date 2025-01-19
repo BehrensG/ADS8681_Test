@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Thu Jan  2 12:35:14 2025
+# Process ID: 11039
+# Current directory: /home/grzegorz/git/Workbench/FPGA/vivado/ADS8681/ADS8681.runs/ads8681_block_1_microblaze_0_axi_intc_0_synth_1
+# Command line: vivado -log ads8681_block_1_microblaze_0_axi_intc_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ads8681_block_1_microblaze_0_axi_intc_0.tcl
+# Log file: /home/grzegorz/git/Workbench/FPGA/vivado/ADS8681/ADS8681.runs/ads8681_block_1_microblaze_0_axi_intc_0_synth_1/ads8681_block_1_microblaze_0_axi_intc_0.vds
+# Journal file: /home/grzegorz/git/Workbench/FPGA/vivado/ADS8681/ADS8681.runs/ads8681_block_1_microblaze_0_axi_intc_0_synth_1/vivado.jou
+# Running On        :archlinux
+# Platform          :unknown
+# Operating System  :unknown
+# Processor Detail  :Intel(R) Core(TM) i7-3630QM CPU @ 2.40GHz
+# CPU Frequency     :3192.741 MHz
+# CPU Physical cores:4
+# CPU Logical cores :8
+# Host memory       :16370 MB
+# Swap memory       :34359 MB
+# Total Virtual     :50730 MB
+# Available Virtual :44008 MB
+#-----------------------------------------------------------
+source ads8681_block_1_microblaze_0_axi_intc_0.tcl -notrace

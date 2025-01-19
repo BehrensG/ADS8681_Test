@@ -1,0 +1,114 @@
+
+#include "ADS8681.h"
+
+#define DEVICE_ID_REG 		0x00
+#define RST_PWRCTL_REG		0x04
+#define SDI_CTL_REG			0x08
+#define SDO_CTL_REG			0x0C
+#define DATAOUT_CTL_REG		0x10
+#define RANGE_SEL_REG		0x14
+#define ALARM_REG			0x20
+#define ALARM_H_TH_REG		0x24
+#define ALARM_L_TH_REG		0x28
+
+#define CLEAR_HWORD			0xC0
+#define READ_HWORD			0xC8
+#define READ_BYTE			0x48
+#define WRITE_HWORD			0xD0
+#define WRITE_MSB			0xD2
+#define WRITE_LSB			0xD4
+#define SET_HWORD			0xD8
+
+#define SPI_DEVICE0_ID	XPAR_SPI_0_DEVICE_ID
+
+
+ XSpi SpiInstace;
+
+static int SPI_Init(XSpi* InstancePtr)
+{
+	XSpi_Config* ConfigPtr;
+	int Status;
+
+	ConfigPtr = XSpi_LookupConfig(SPI_DEVICE0_ID);
+	if(NULL == ConfigPtr) {
+		return XST_DEVICE_NOT_FOUND;
+	}
+
+	Status = XSpi_CfgInitialize(InstancePtr, ConfigPtr, ConfigPtr->BaseAddress);
+	if(Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	Status = XSpi_SelfTest(InstancePtr);
+	if(Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	Status = XSpi_SetOptions(InstancePtr, XSP_MASTER_OPTION );
+	if(Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	XSpi_Start(InstancePtr);
+	if(Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	XSpi_IntrGlobalDisable(InstancePtr);
+
+	return XST_SUCCESS;
+
+}
+
+int ADS8681_Init()
+{
+	return SPI_Init(&SpiInstace);
+}
+
+int ADS8681_SetRange(u8 range)
+{
+	return XST_SUCCESS;
+}
+
+typedef union data{
+	u32 dword;
+	u8 bytes[4];
+}ads8681_data;
+
+int ADS8681_Test(XSpi* InstancePtr, u8* byte)
+{
+	volatile ads8681_data TxData;
+	volatile ads8681_data RxData;
+	XSpi_IntrGlobalDisable(InstancePtr);
+	memset(TxData.bytes,0,4);
+	memset(RxData.bytes,0,4);
+
+	TxData.bytes[3] = WRITE_LSB;
+	TxData.bytes[2] = DEVICE_ID_REG + 0x02;
+	TxData.bytes[1] = 0x00;
+	TxData.bytes[0] = 0x07;
+
+	XSpi_SetSlaveSelect(InstancePtr, 0x01);
+	XSpi_Transfer(InstancePtr, TxData.bytes, RxData.bytes, 4);
+	XSpi_SetSlaveSelect(InstancePtr, 0x00);
+
+	usleep(2);
+
+	TxData.bytes[3] = READ_BYTE;
+	TxData.bytes[2] = DEVICE_ID_REG + 0x02;
+	TxData.bytes[1] = 0x00;
+	TxData.bytes[0] = 0x00;
+
+	XSpi_SetSlaveSelect(InstancePtr, 0x01);
+	XSpi_Transfer(InstancePtr, TxData.bytes, RxData.bytes, 4);
+	XSpi_SetSlaveSelect(InstancePtr, 0x00);
+
+	usleep(2);
+
+	//XSpi_SetSlaveSelect(InstancePtr, 0x01);
+	XSpi_Transfer(InstancePtr, RxData.bytes, RxData.bytes, 4);
+	//XSpi_SetSlaveSelect(InstancePtr, 0x00);
+
+
+	return XST_SUCCESS;
+}

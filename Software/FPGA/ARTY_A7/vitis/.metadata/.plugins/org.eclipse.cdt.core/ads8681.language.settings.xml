@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+    	
+    <configuration id="xilinx.gnu.mb.exe.debug.1845586275" name="Debug">
+        		
+        <extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
+            			
+            <provider id="org.eclipse.cdt.ui.UserLanguageSettingsProvider">
+                				
+                <language id="org.eclipse.cdt.core.gcc">
+                    					
+                    <resource project-relative-path="src/BSP/libscpi/inc">
+                        						
+                        <entry kind="includePath" name="/${ProjName}/src/BSP/libscpi/inc/scpi">
+                            							
+                            <flag value="LOCAL|VALUE_WORKSPACE_PATH"/>
+                            						
+                        </entry>
+                        						
+                        <entry kind="includePath" name="/${ProjName}/src/BSP/libscpi/inc">
+                            							
+                            <flag value="LOCAL|VALUE_WORKSPACE_PATH"/>
+                            						
+                        </entry>
+                        					
+                    </resource>
+                    				
+                </language>
+                			
+            </provider>
+            		
+        </extension>
+        	
+    </configuration>
+    
+</project>
