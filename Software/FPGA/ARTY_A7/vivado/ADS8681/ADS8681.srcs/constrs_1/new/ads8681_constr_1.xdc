@@ -28,7 +28,7 @@ set_property PACKAGE_PIN J5 [get_ports {gpio_rtl_0_tri_o[1]}]
 set_property PACKAGE_PIN T9 [get_ports {gpio_rtl_0_tri_o[2]}]
 set_property PACKAGE_PIN T10 [get_ports {gpio_rtl_0_tri_o[3]}]
 
-set_property PULLTYPE PULLUP [get_ports spi0_miso]
+
 
 set_property OFFCHIP_TERM NONE [get_ports spi0_mosi]
 set_property OFFCHIP_TERM NONE [get_ports spi0_sck]

@@ -6,4 +6,6 @@
 		<item key="SashWeightTree" value="649"/>
 		<item key="SashWeightDetails" value="350"/>
 	</section>
+	<section name="org.eclipse.tcf.internal.cdt.ui.breakpoints.TCFThreadFilterEditor">
+	</section>
 </section>

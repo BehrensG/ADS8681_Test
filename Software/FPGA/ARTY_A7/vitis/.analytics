@@ -561,3 +561,13 @@ timestamp=[2025-01-19 22:42:21], mode=PLATFORM_GENERATION, duration=0:00:06.596,
 timestamp=[2025-01-19 22:42:27], mode=PLATFORM_GENERATION, duration=0:00:05.611, duration_ms=5611, data={name=ads8681_platform}
 timestamp=[2025-01-19 22:42:27], mode=BUILD, duration=0:00:00.229, duration_ms=229, data={name=ads8681, configuration=Debug, clean_build=true}
 timestamp=[2025-01-19 22:42:27], mode=BUILD, duration=0:00:00.228, duration_ms=228, data={name=ads8681_system, configuration=Debug, clean_build=true}
+timestamp=[2025-01-27 21:20:22], mode=WORKBENCH_START, duration=0:00:11.037, duration_ms=11037, data={}
+timestamp=[2025-01-27 21:20:23], mode=WORKBENCH_UI_INIT, duration=0:00:01.291, duration_ms=1291, data={editors_count=3, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,ads8681,ads8681_platform,ads8681_system}
+timestamp=[2025-01-27 21:20:23], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:01.273, duration_ms=1273, data={}
+timestamp=[2025-01-27 21:29:03], mode=PLATFORM_GENERATION, duration=0:00:09.075, duration_ms=9075, data={name=ads8681_platform}
+timestamp=[2025-01-27 21:29:56], mode=PLATFORM_GENERATION, duration=0:00:08.645, duration_ms=8645, data={name=ads8681_platform}
+timestamp=[2025-01-27 21:30:00], mode=BUILD, duration=0:00:01.767, duration_ms=1767, data={name=ads8681, configuration=Debug, clean_build=false}
+timestamp=[2025-01-27 21:30:01], mode=BUILD, duration=0:00:00.249, duration_ms=249, data={name=ads8681_system, configuration=Debug, clean_build=false}
+timestamp=[2025-01-27 21:38:54], mode=PLATFORM_GENERATION, duration=0:00:06.630, duration_ms=6630, data={name=ads8681_platform}
+timestamp=[2025-01-27 21:38:54], mode=BUILD, duration=0:00:00.242, duration_ms=242, data={name=ads8681, configuration=Debug, clean_build=true}
+timestamp=[2025-01-27 21:39:03], mode=PLATFORM_GENERATION, duration=0:00:05.805, duration_ms=5805, data={name=ads8681_platform}

@@ -2,7 +2,7 @@
 --Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
---Date        : Thu Jan 16 20:51:48 2025
+--Date        : Mon Jan 27 21:18:57 2025
 --Host        : archlinux running 64-bit unknown
 --Command     : generate_target ads8681_block_1.bd
 --Design      : ads8681_block_1
@@ -630,10 +630,10 @@ architecture STRUCTURE of microblaze_0_local_memory_imp_AT9BJO is
   signal NLW_ilmb_v10_LMB_Rst_UNCONNECTED : STD_LOGIC;
   signal NLW_lmb_bram_rsta_busy_UNCONNECTED : STD_LOGIC;
   signal NLW_lmb_bram_rstb_busy_UNCONNECTED : STD_LOGIC;
+  attribute BMM_INFO_ADDRESS_SPACE : string;
+  attribute BMM_INFO_ADDRESS_SPACE of dlmb_bram_if_cntlr : label is "byte  0x00000000 32 > ads8681_block_1 microblaze_0_local_memory/lmb_bram";
   attribute KEEP_HIERARCHY : string;
   attribute KEEP_HIERARCHY of dlmb_bram_if_cntlr : label is "yes";
-  attribute bmm_info_address_space : string;
-  attribute bmm_info_address_space of dlmb_bram_if_cntlr : label is "byte  0x00000000 32 > ads8681_block_1 microblaze_0_local_memory/lmb_bram";
 begin
   DLMB_ce <= microblaze_0_dlmb_CE;
   DLMB_readdbus(0 to 31) <= microblaze_0_dlmb_READDBUS(0 to 31);
@@ -1822,10 +1822,10 @@ entity ads8681_block_1 is
     spi0_sck : out STD_LOGIC;
     tx : out STD_LOGIC
   );
-  attribute core_generation_info : string;
-  attribute core_generation_info of ads8681_block_1 : entity is "ads8681_block_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=ads8681_block_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=22,numReposBlks=15,numNonXlnxBlks=0,numHierBlks=7,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,da_board_cnt=3,da_clkrst_cnt=1,da_mb_cnt=2,synth_mode=Hierarchical}";
-  attribute hw_handoff : string;
-  attribute hw_handoff of ads8681_block_1 : entity is "ads8681_block_1.hwdef";
+  attribute CORE_GENERATION_INFO : string;
+  attribute CORE_GENERATION_INFO of ads8681_block_1 : entity is "ads8681_block_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=ads8681_block_1,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=22,numReposBlks=15,numNonXlnxBlks=0,numHierBlks=7,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,da_board_cnt=3,da_clkrst_cnt=1,da_mb_cnt=2,synth_mode=Hierarchical}";
+  attribute HW_HANDOFF : string;
+  attribute HW_HANDOFF of ads8681_block_1 : entity is "ads8681_block_1.hwdef";
 end ads8681_block_1;
 
 architecture STRUCTURE of ads8681_block_1 is
@@ -2187,17 +2187,17 @@ architecture STRUCTURE of ads8681_block_1 is
   signal NLW_axi_quad_spi_0_ss_t_UNCONNECTED : STD_LOGIC;
   signal NLW_rst_clk_wiz_1_100M_interconnect_aresetn_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_rst_clk_wiz_1_100M_peripheral_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
+  attribute BMM_INFO_PROCESSOR : string;
+  attribute BMM_INFO_PROCESSOR of microblaze_0 : label is "microblaze-le > ads8681_block_1 microblaze_0_local_memory/dlmb_bram_if_cntlr";
   attribute KEEP_HIERARCHY : string;
   attribute KEEP_HIERARCHY of microblaze_0 : label is "yes";
-  attribute bmm_info_processor : string;
-  attribute bmm_info_processor of microblaze_0 : label is "microblaze-le > ads8681_block_1 microblaze_0_local_memory/dlmb_bram_if_cntlr";
-  attribute x_interface_info : string;
-  attribute x_interface_info of clk_100MHz : signal is "xilinx.com:signal:clock:1.0 CLK.CLK_100MHZ CLK";
-  attribute x_interface_parameter : string;
-  attribute x_interface_parameter of clk_100MHz : signal is "XIL_INTERFACENAME CLK.CLK_100MHZ, CLK_DOMAIN ads8681_block_1_clk_100MHz, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0";
-  attribute x_interface_info of reset_n : signal is "xilinx.com:signal:reset:1.0 RST.RESET_N RST";
-  attribute x_interface_parameter of reset_n : signal is "XIL_INTERFACENAME RST.RESET_N, INSERT_VIP 0, POLARITY ACTIVE_LOW";
-  attribute x_interface_info of gpio_rtl_0_tri_o : signal is "xilinx.com:interface:gpio:1.0 gpio_rtl_0 TRI_O";
+  attribute X_INTERFACE_INFO : string;
+  attribute X_INTERFACE_INFO of clk_100MHz : signal is "xilinx.com:signal:clock:1.0 CLK.CLK_100MHZ CLK";
+  attribute X_INTERFACE_PARAMETER : string;
+  attribute X_INTERFACE_PARAMETER of clk_100MHz : signal is "XIL_INTERFACENAME CLK.CLK_100MHZ, CLK_DOMAIN ads8681_block_1_clk_100MHz, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0";
+  attribute X_INTERFACE_INFO of reset_n : signal is "xilinx.com:signal:reset:1.0 RST.RESET_N RST";
+  attribute X_INTERFACE_PARAMETER of reset_n : signal is "XIL_INTERFACENAME RST.RESET_N, INSERT_VIP 0, POLARITY ACTIVE_LOW";
+  attribute X_INTERFACE_INFO of gpio_rtl_0_tri_o : signal is "xilinx.com:interface:gpio:1.0 gpio_rtl_0 TRI_O";
 begin
   clk_100MHz_1 <= clk_100MHz;
   gpio_rtl_0_tri_o(3 downto 0) <= axi_gpio_0_GPIO_TRI_O(3 downto 0);
@@ -2234,10 +2234,10 @@ axi_gpio_0: component ads8681_block_1_axi_gpio_0_0
 axi_quad_spi_0: component ads8681_block_1_axi_quad_spi_0_0
      port map (
       ext_spi_clk => microblaze_0_Clk,
-      io0_i => spi0_miso_1,
+      io0_i => '0',
       io0_o => axi_quad_spi_0_io0_o,
       io0_t => NLW_axi_quad_spi_0_io0_t_UNCONNECTED,
-      io1_i => '0',
+      io1_i => spi0_miso_1,
       io1_o => NLW_axi_quad_spi_0_io1_o_UNCONNECTED,
       io1_t => NLW_axi_quad_spi_0_io1_t_UNCONNECTED,
       ip2intc_irpt => axi_quad_spi_0_ip2intc_irpt,

@@ -1,5 +1,5 @@
-22:42:21 **** Clean-only build of project ads8681_platform ****
-buildplatform.sh 37021 ads8681_platform clean 
+21:38:57 **** Clean-only build of project ads8681_platform ****
+buildplatform.sh 36491 ads8681_platform clean 
 XSDB Server Channel: tcfchan#7
 Cleaning the BSP for domain  - standalone_domain
 make -C microblaze_0/libsrc/bram_v4_10/src -s clean 
@@ -19,5 +19,5 @@ make -C microblaze_0/libsrc/uartlite_v3_10/src -s clean
 rm -f microblaze_0/lib/libxil.a
 
 
-22:42:27 Build Finished (took 5s.593ms)
+21:39:03 Build Finished (took 5s.792ms)
 

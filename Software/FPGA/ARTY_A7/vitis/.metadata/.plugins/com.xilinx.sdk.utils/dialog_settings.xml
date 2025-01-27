@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<item key="scw_hwspec" value="/home/grzegorz/git/Workbench/FPGA/vivado/ADS8681"/>
+	<item key="scw_hwspec_file_selection" value="/home/grzegorz/git/ADS8681_Test/Software/FPGA/ARTY_A7/vivado/ADS8681"/>
 </section>

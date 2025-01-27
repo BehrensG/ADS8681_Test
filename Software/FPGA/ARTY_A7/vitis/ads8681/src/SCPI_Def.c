@@ -182,7 +182,7 @@ scpi_result_t SCPI_SystemErrorQ(scpi_t * context)
 scpi_result_t SCPI_TS(scpi_t * context)
 {
 	u8 data = 0;
-	ADS8681_Test(&SpiInstace,&data);
+	ADS8681_Test(&SpiInstace);
 	SCPI_ResultUInt8(context,data);
     return SCPI_RES_OK;
 }

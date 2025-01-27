@@ -2,7 +2,7 @@
 --Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
---Date        : Thu Jan 16 20:51:49 2025
+--Date        : Mon Jan 27 21:18:57 2025
 --Host        : archlinux running 64-bit unknown
 --Command     : generate_target ads8681_block_1_wrapper.bd
 --Design      : ads8681_block_1_wrapper

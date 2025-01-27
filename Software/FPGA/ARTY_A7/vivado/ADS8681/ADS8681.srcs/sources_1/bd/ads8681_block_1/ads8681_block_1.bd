@@ -1220,7 +1220,7 @@
       "spi0_miso_1": {
         "ports": [
           "spi0_miso",
-          "axi_quad_spi_0/io0_i"
+          "axi_quad_spi_0/io1_i"
         ]
       }
     },

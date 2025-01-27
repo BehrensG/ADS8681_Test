@@ -112,7 +112,7 @@ int ADS8681_SetRange(u8 range)
 }
 
 
-int ADS8681_Test(XSpi* InstancePtr, u8* byte)
+int ADS8681_Test(XSpi* InstancePtr)
 {
 	ads8681_data TxData;
 	ads8681_data RxData;

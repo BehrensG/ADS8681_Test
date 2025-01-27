@@ -9,6 +9,6 @@
 extern  XSpi SpiInstace;
 
 int ADS8681_Init();
-int ADS8681_Test(XSpi* InstancePtr, u8* byte);
+int ADS8681_Test(XSpi* InstancePtr);
 
 #endif // __ADS8681_H_
