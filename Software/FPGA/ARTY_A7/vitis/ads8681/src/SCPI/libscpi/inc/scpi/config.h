@@ -47,6 +47,8 @@ extern "C" {
 #include "scpi_user_config.h"
 #endif
 
+#include "min_printf.h"
+
 /* set the termination character(s)   */
 #define LINE_ENDING_CR          "\r"    /*   use a <CR> carriage return as termination charcter */
 #define LINE_ENDING_LF          "\n"    /*   use a <LF> line feed as termination charcter */
@@ -190,7 +192,7 @@ extern "C" {
 #elif USE_CUSTOM_DTOSTRE
 #define SCPIDEFINE_floatToStr(v, s, l) SCPI_dtostre((v), (s), (l), 6, 0)
 #elif HAVE_SNPRINTF
-#define SCPIDEFINE_floatToStr(v, s, l) snprintf((s), (l), "%g", (v))
+#define SCPIDEFINE_floatToStr(v, s, l) min_snprintf((s), (l), "%g", (v))
 #else
 #define SCPIDEFINE_floatToStr(v, s, l) SCPI_dtostre((v), (s), (l), 6, 0)
 #endif
@@ -200,7 +202,7 @@ extern "C" {
 #elif USE_CUSTOM_DTOSTRE
 #define SCPIDEFINE_doubleToStr(v, s, l) SCPI_dtostre((v), (s), (l), 15, 0)
 #elif HAVE_SNPRINTF
-#define SCPIDEFINE_doubleToStr(v, s, l) snprintf((s), (l), "%.15lg", (v))
+#define SCPIDEFINE_doubleToStr(v, s, l) min_snprintf((s), (l), "%.15lg", (v))
 #else
 #define SCPIDEFINE_doubleToStr(v, s, l) SCPI_dtostre((v), (s), (l), 15, 0)
 #endif

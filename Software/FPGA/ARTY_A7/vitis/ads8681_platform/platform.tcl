@@ -97,3 +97,9 @@ platform config -updatehw {/home/grzegorz/git/ADS8681_Test/Software/FPGA/ARTY_A7
 platform generate -domains 
 platform clean
 platform clean
+platform clean
+platform generate
+platform clean
+platform generate
+platform clean
+platform clean

@@ -181,10 +181,13 @@ scpi_result_t SCPI_SystemErrorQ(scpi_t * context)
 
 scpi_result_t SCPI_TS(scpi_t * context)
 {
-	u8 data = 0;
-	ADS8681_Test(&SpiInstace);
-	SCPI_ResultUInt8(context,data);
-    return SCPI_RES_OK;
+	ads8681_data data;
+	ADS8681_Readout(&SpiInstace, &data);
+	u32 tmp = (data.dword >> 16);
+
+	float result = (tmp - ADS8681_FSR_CENTER)*0.000375;
+	SCPI_ResultFloat(context, result);
+	return SCPI_RES_OK;
 }
 
 

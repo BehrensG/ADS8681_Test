@@ -20,4 +20,5 @@ rst -system
 after 3000
 targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
 dow /home/grzegorz/git/ADS8681_Test/Software/FPGA/ARTY_A7/vitis/ads8681/Debug/ads8681.elf
-bpadd -addr &main
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
