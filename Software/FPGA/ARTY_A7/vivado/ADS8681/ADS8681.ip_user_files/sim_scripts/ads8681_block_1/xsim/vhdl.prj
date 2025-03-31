@@ -9,8 +9,8 @@ vhdl xil_defaultlib  \
 "../../../bd/ads8681_block_1/ip/ads8681_block_1_rst_clk_wiz_1_100M_0/sim/ads8681_block_1_rst_clk_wiz_1_100M_0.vhd" \
 "../../../bd/ads8681_block_1/ip/ads8681_block_1_axi_uartlite_0_0/sim/ads8681_block_1_axi_uartlite_0_0.vhd" \
 "../../../bd/ads8681_block_1/ip/ads8681_block_1_axi_quad_spi_0_0/sim/ads8681_block_1_axi_quad_spi_0_0.vhd" \
-"../../../bd/ads8681_block_1/sim/ads8681_block_1.vhd" \
 "../../../bd/ads8681_block_1/ip/ads8681_block_1_axi_gpio_0_0/sim/ads8681_block_1_axi_gpio_0_0.vhd" \
+"../../../bd/ads8681_block_1/sim/ads8681_block_1.vhd" \
 
 # Do not sort compile order
 nosort

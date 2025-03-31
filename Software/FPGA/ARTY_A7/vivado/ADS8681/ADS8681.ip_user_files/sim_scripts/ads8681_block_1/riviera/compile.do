@@ -59,12 +59,12 @@ vmap axi_quad_spi_v3_2_30 riviera/axi_quad_spi_v3_2_30
 vmap axi_gpio_v2_0_33 riviera/axi_gpio_v2_0_33
 
 vlog -work xpm  -incr "+incdir+../../../../ADS8681.gen/sources_1/bd/ads8681_block_1/ipshared/ec67/hdl" "+incdir+../../../../ADS8681.gen/sources_1/bd/ads8681_block_1/ipshared/3242" -l xpm -l microblaze_v11_0_13 -l xil_defaultlib -l lmb_v10_v3_0_14 -l lmb_bram_if_cntlr_v4_0_24 -l blk_mem_gen_v8_4_8 -l generic_baseblocks_v2_1_2 -l axi_infrastructure_v1_1_0 -l axi_register_slice_v2_1_31 -l fifo_generator_v13_2_10 -l axi_data_fifo_v2_1_30 -l axi_crossbar_v2_1_32 -l axi_lite_ipif_v3_0_4 -l axi_intc_v4_1_19 -l xlconcat_v2_1_6 -l mdm_v3_2_26 -l lib_cdc_v1_0_3 -l proc_sys_reset_v5_0_15 -l lib_pkg_v1_0_4 -l lib_srl_fifo_v1_0_4 -l axi_uartlite_v2_0_35 -l dist_mem_gen_v8_0_15 -l lib_fifo_v1_0_19 -l interrupt_control_v3_1_5 -l axi_quad_spi_v3_2_30 -l axi_gpio_v2_0_33 \
-"/opt/Xilinx/Vivado/2024.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
-"/opt/Xilinx/Vivado/2024.1/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv" \
-"/opt/Xilinx/Vivado/2024.1/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
+"C:/Xilinx/Vivado/2024.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+"C:/Xilinx/Vivado/2024.1/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv" \
+"C:/Xilinx/Vivado/2024.1/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 
 vcom -work xpm -93  -incr \
-"/opt/Xilinx/Vivado/2024.1/data/ip/xpm/xpm_VCOMP.vhd" \
+"C:/Xilinx/Vivado/2024.1/data/ip/xpm/xpm_VCOMP.vhd" \
 
 vcom -work microblaze_v11_0_13 -93  -incr \
 "../../../../ADS8681.gen/sources_1/bd/ads8681_block_1/ipshared/aa1c/hdl/microblaze_v11_0_vh_rfs.vhd" \
@@ -179,13 +179,13 @@ vcom -work axi_quad_spi_v3_2_30 -93  -incr \
 
 vcom -work xil_defaultlib -93  -incr \
 "../../../bd/ads8681_block_1/ip/ads8681_block_1_axi_quad_spi_0_0/sim/ads8681_block_1_axi_quad_spi_0_0.vhd" \
-"../../../bd/ads8681_block_1/sim/ads8681_block_1.vhd" \
 
 vcom -work axi_gpio_v2_0_33 -93  -incr \
 "../../../../ADS8681.gen/sources_1/bd/ads8681_block_1/ipshared/4208/hdl/axi_gpio_v2_0_vh_rfs.vhd" \
 
 vcom -work xil_defaultlib -93  -incr \
 "../../../bd/ads8681_block_1/ip/ads8681_block_1_axi_gpio_0_0/sim/ads8681_block_1_axi_gpio_0_0.vhd" \
+"../../../bd/ads8681_block_1/sim/ads8681_block_1.vhd" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

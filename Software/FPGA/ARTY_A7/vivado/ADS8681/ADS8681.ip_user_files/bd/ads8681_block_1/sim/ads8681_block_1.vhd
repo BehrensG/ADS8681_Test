@@ -2,7 +2,7 @@
 --Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
---Date        : Mon Jan  6 20:26:02 2025
+--Date        : Mon Jan 27 21:18:57 2025
 --Host        : archlinux running 64-bit unknown
 --Command     : generate_target ads8681_block_1.bd
 --Design      : ads8681_block_1
@@ -2234,10 +2234,10 @@ axi_gpio_0: component ads8681_block_1_axi_gpio_0_0
 axi_quad_spi_0: component ads8681_block_1_axi_quad_spi_0_0
      port map (
       ext_spi_clk => microblaze_0_Clk,
-      io0_i => spi0_miso_1,
+      io0_i => '0',
       io0_o => axi_quad_spi_0_io0_o,
       io0_t => NLW_axi_quad_spi_0_io0_t_UNCONNECTED,
-      io1_i => '0',
+      io1_i => spi0_miso_1,
       io1_o => NLW_axi_quad_spi_0_io1_o_UNCONNECTED,
       io1_t => NLW_axi_quad_spi_0_io1_t_UNCONNECTED,
       ip2intc_irpt => axi_quad_spi_0_ip2intc_irpt,

@@ -7073,3 +7073,5 @@ con
 22:06:58 INFO  : Result from executing command 'removePlatformRepo': 
 22:07:09 ERROR : Error from executing command 'removePlatformRepo': ERROR: No valid directory exists at given path.
 22:07:20 INFO  : Disconnected from the channel tcfchan#10.
+07:12:24 DEBUG : Logs will be stored at 'C:/home/devel/ADS8681_Test/Software/FPGA/ARTY_A7/vitis/IDE.log'.
+07:18:17 DEBUG : Logs will be stored at 'C:/home/devel/ADS8681_Test/Software/FPGA/ARTY_A7/vitis/IDE.log'.
