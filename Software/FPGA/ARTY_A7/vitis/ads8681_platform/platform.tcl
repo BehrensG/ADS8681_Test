@@ -103,3 +103,26 @@ platform clean
 platform generate
 platform clean
 platform clean
+platform generate
+platform active {ads8681_platform}
+platform config -updatehw {/home/grzegorz/git/ADS8681_Test/Software/FPGA/ARTY_A7/vivado/ADS8681/ads8681_block_1_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {/home/grzegorz/git/ADS8681_Test/Software/FPGA/ARTY_A7/vivado/ADS8681/ads8681_block_1_wrapper.xsa}
+platform generate -domains 
+platform config -updatehw {/home/grzegorz/git/ADS8681_Test/Software/FPGA/ARTY_A7/vivado/ADS8681/ads8681_block_1_wrapper.xsa}
+platform generate -domains 
+platform clean
+platform clean
+platform generate
+platform clean
+platform clean
+platform generate
+platform clean
+platform generate
+platform clean
+platform clean
+platform generate -domains standalone_domain 
+platform clean
+platform generate
+platform clean
+platform clean

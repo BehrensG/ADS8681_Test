@@ -53,15 +53,6 @@
 scpi_t scpi_uart_context;
 // --------------------------------------------------------------------------------------------------------------------
 
-scpi_choice_def_t scpi_boolean_select[] =
-{
-    {"OFF", 0},
-    {"ON", 1},
-	{"0", 0},
-	{"1", 1},
-    SCPI_CHOICE_LIST_END
-};
-
 // --------------------------------------------------------------------------------------------------------------------
 
 size_t SCPI_Write(scpi_t * context, const char * data, size_t len) {
@@ -179,17 +170,119 @@ scpi_result_t SCPI_SystemErrorQ(scpi_t * context)
 
 // --------------------------------------------------------------------------------------------------------------------
 
-scpi_result_t SCPI_TS(scpi_t * context)
-{
-	ads8681_data data;
-	ADS8681_Readout(&SpiInstace, &data);
-	u32 tmp = (data.dword >> 16);
+static uint8_t range[] = {12, 10, 6, 5, 2};
+static uint8_t range_sel[] = {0x00, 0x01, 0x02, 0x03, 0x04};
+static float lsb[] = {0.000375, 0.0003125, 0.0001875, 0.00015625, 0.000078125};
+static uint8_t range_index = 0;
+static uint8_t reference = ADC_REF_INT;
 
-	float result = (tmp - ADS8681_FSR_CENTER)*0.000375;
-	SCPI_ResultFloat(context, result);
+scpi_choice_def_t scpi_reference_select[] =
+{
+    {"INT", ADC_REF_INT},
+    {"EXT", ADC_REF_EXT},
+    SCPI_CHOICE_LIST_END
+};
+
+
+scpi_result_t SCPI_ConfigureReference(scpi_t * context)
+{
+
+	int32_t value = 0;
+	if(!SCPI_ParamChoice(context, scpi_reference_select, &value, TRUE))
+	{
+		return SCPI_RES_ERR;
+	}
+
+	reference = (uint8_t)value;
+
+	ads8681_data TxData;
+
+	TxData.bytes[0] = WRITE_HWORD;
+	TxData.bytes[1] = RANGE_SEL_REG;
+	TxData.bytes[2] = 0;
+	TxData.bytes[3] = reference | range_sel[range_index];
+
+	ADS8681_WriteHWord(&SpiInstace, TxData);
+
 	return SCPI_RES_OK;
 }
 
+
+scpi_result_t SCPI_ConfigureReferenceQ(scpi_t * context)
+{
+
+	if (ADC_REF_INT == reference)
+	{
+		SCPI_ResultCharacters(context, "INT", strlen("INT"));
+	}
+	else if (ADC_REF_EXT == reference)
+	{
+		SCPI_ResultCharacters(context, "EXT", strlen("EXT"));
+	}
+
+	return SCPI_RES_OK;
+}
+
+
+scpi_result_t SCPI_ConfigureGain(scpi_t * context)
+{
+	uint32_t value = 0.0;
+	uint8_t valid = 0;
+	ads8681_data TxData;
+
+	if(!SCPI_ParamUInt32(context, &value, TRUE))
+	{
+		return SCPI_RES_ERR;
+	}
+
+
+	for (u8 i=0; i < 4; i++)
+	{
+		if (value == range[i])
+		{
+			range_index = i;
+			valid = 1;
+			break;
+		}
+	}
+
+	if (valid)
+	{
+		TxData.bytes[0] = WRITE_HWORD;
+		TxData.bytes[1] = RANGE_SEL_REG;
+		TxData.bytes[2] = 0;
+		TxData.bytes[3] = reference | range_sel[range_index];
+
+		ADS8681_WriteHWord(&SpiInstace, TxData);
+	}
+	else
+	{
+		return SCPI_RES_ERR;
+	}
+
+
+	return SCPI_RES_OK;
+}
+
+
+scpi_result_t SCPI_ConfigureGainQ(scpi_t * context)
+{
+	SCPI_ResultFloat(context, range[range_index]);
+	return SCPI_RES_OK;
+}
+
+scpi_result_t SCPI_ReadQ(scpi_t * context)
+{
+	ads8681_data RxData;
+	float read = 0.0;
+	uint32_t data = 0;
+
+	ADS8681_Readout(&SpiInstace, &RxData);
+	data = RxData.dword >> 16;
+	read = ((float)data - (float)ADS8681_FSR_CENTER) * lsb[range_index];
+	SCPI_ResultFloat(context, read);
+	return SCPI_RES_OK;
+}
 
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -221,9 +314,14 @@ const scpi_command_t scpi_commands[] = {
     {.pattern = "SYSTem:ERRor:COUNt?", .callback = SCPI_SystemErrorCountQ,},
     {.pattern = "SYSTem:VERSion?", .callback = SCPI_SystemVersionQ,},
 
+	{.pattern = "CONFigure:REFerence", .callback = SCPI_ConfigureReference,},
+	{.pattern = "CONFigure:REFerence?", .callback = SCPI_ConfigureReferenceQ,},
 
+	{.pattern = "CONFigure:GAIN", .callback = SCPI_ConfigureGain,},
+	{.pattern = "CONFigure:GAIN?", .callback = SCPI_ConfigureGainQ,},
 
-	{.pattern = "TS?", .callback = SCPI_TS,},
+	{.pattern = "READ?", .callback = SCPI_ReadQ,},
+
 
 	SCPI_CMD_LIST_END
 };

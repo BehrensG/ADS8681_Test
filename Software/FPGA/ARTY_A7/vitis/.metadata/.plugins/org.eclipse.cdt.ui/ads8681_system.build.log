@@ -1,8 +1,8 @@
-22:07:02 **** Clean-only build of configuration Debug for project ads8681_system ****
+00:10:55 **** Clean-only build of configuration Debug for project ads8681_system ****
 make clean 
 rm -rf ./_sds
 rm -rf package
 rm -f system.bif
 
-22:07:02 Build Finished (took 238ms)
+00:10:55 Build Finished (took 218ms)
 

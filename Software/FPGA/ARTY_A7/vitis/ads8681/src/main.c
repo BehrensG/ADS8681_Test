@@ -159,7 +159,7 @@ int main() {
             scpi_error_queue_data, SCPI_ERROR_QUEUE_SIZE);
 
 
-    xil_printf("System Initialized. Waiting for Data...\r\n");
+  //  xil_printf("System Initialized. Waiting for Data...\r\n");
 
     while (1) {
 

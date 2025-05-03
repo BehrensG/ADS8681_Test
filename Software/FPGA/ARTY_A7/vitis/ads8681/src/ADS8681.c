@@ -1,5 +1,6 @@
 
 #include "ADS8681.h"
+#include "sleep.h"
 
 #define DEVICE_ID_REG 		0x00
 #define RST_PWRCTL_REG		0x04
@@ -86,6 +87,39 @@ int ADS8681_Readout(XSpi* InstancePtr, ads8681_data* data)
 	XSpi_SetSlaveSelect(InstancePtr, 0x00);
 
 	data->dword=RxData.dword;
+
+	return XST_SUCCESS;
+}
+
+int ADS8681_WriteHWord(XSpi* InstancePtr, ads8681_data TxData)
+{
+	ads8681_data RxData;
+
+	memset(RxData.bytes,0,4);
+
+	XSpi_SetSlaveSelect(InstancePtr, 0x01);
+	XSpi_Transfer(InstancePtr, TxData.bytes, RxData.bytes, 4);
+	XSpi_SetSlaveSelect(InstancePtr, 0x00);
+
+	return XST_SUCCESS;
+}
+
+int ADS8681_ReadHWord(XSpi* InstancePtr, ads8681_data TxData, ads8681_data* RxData)
+{
+	ads8681_data rx;
+
+	memset(rx.bytes,0,4);
+
+	XSpi_SetSlaveSelect(InstancePtr, 0x01);
+	XSpi_Transfer(InstancePtr, TxData.bytes, rx.bytes, 4);
+	XSpi_SetSlaveSelect(InstancePtr, 0x00);
+	usleep(20);
+	XSpi_SetSlaveSelect(InstancePtr, 0x01);
+	XSpi_Transfer(InstancePtr, TxData.bytes, rx.bytes, 4);
+	XSpi_SetSlaveSelect(InstancePtr, 0x00);
+
+
+	RxData->dword=rx.dword;
 
 	return XST_SUCCESS;
 }
