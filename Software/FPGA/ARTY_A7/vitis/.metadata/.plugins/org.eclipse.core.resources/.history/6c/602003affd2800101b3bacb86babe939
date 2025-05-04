@@ -267,7 +267,7 @@ scpi_result_t SCPI_ConfigureGain(scpi_t * context)
 
 scpi_result_t SCPI_ConfigureGainQ(scpi_t * context)
 {
-	SCPI_ResultUInt32(context, range[range_index]);
+	SCPI_ResultFloat(context, range[range_index]);
 	return SCPI_RES_OK;
 }
 

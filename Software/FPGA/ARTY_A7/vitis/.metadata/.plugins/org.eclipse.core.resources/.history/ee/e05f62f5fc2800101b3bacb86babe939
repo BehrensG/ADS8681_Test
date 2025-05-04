@@ -267,7 +267,7 @@ scpi_result_t SCPI_ConfigureGain(scpi_t * context)
 
 scpi_result_t SCPI_ConfigureGainQ(scpi_t * context)
 {
-	SCPI_ResultUInt32(context, range[range_index]);
+	SCPI_ResultFloat(context, range[range_index]);
 	return SCPI_RES_OK;
 }
 
@@ -276,9 +276,6 @@ scpi_result_t SCPI_ReadQ(scpi_t * context)
 	ads8681_data RxData;
 	float read = 0.0;
 	uint32_t data = 0;
-
-	// Dummy read
-	ADS8681_Readout(&SpiInstace, &RxData);
 
 	ADS8681_Readout(&SpiInstace, &RxData);
 	data = RxData.dword >> 16;

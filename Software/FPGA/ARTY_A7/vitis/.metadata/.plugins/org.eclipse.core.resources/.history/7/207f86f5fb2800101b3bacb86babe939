@@ -94,7 +94,7 @@ void RxUartHandler(void *CallBackRef, unsigned int EventData) {
 
 	  } else if ( '\n' == uartRx_byte)   {
 
-		  memcpy(&scpi_uart_context.end[0],ends[1],strlen(ends[1]));
+		  memcpy(&scpi_uart_context.end[1],ends[0],strlen(ends[1]));
 
 		  while (XUartLite_IsSending(&UartLiteInstance) == TRUE);
 
